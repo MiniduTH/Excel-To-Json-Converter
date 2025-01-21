@@ -7,19 +7,19 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="MigLayout" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$USER_HOME$/Downloads/jar" />
+          <root url="file://$MODULE_DIR$/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://$USER_HOME$/Downloads/jar" />
+          <root url="file://$MODULE_DIR$/lib" />
         </SOURCES>
-        <jarDirectory url="file://$USER_HOME$/Downloads/jar" recursive="false" />
-        <jarDirectory url="file://$USER_HOME$/Downloads/jar" recursive="false" type="SOURCES" />
+        <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="MigLayout" level="project" />
   </component>
 </module>
