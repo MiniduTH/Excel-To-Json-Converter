@@ -1,5 +1,6 @@
 package excelConvertor;
 
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
@@ -29,7 +30,20 @@ public class ReadExcel {
                 for (int j = cols[0]; j < cols.length; j++) {
                     excelData.append("\t\"");
                     excelData.append(sh.getRow(0).getCell(j));
-                    excelData.append("\" : \"");
+                    excelData.append("\" : ");
+                    CellType ct =sh.getRow(i).getCell(j).getCellType();
+                    switch (ct){
+                        case NUMERIC:
+                            excelData.append(sh.getRow(i).getCell(j).getNumericCellValue());
+                            break;
+                        case STRING:
+                            excelData.append("\"").append(sh.getRow(i).getCell(j).getStringCellValue()).append("\"");
+                            break;
+                        case BOOLEAN:
+                            excelData.append(sh.getRow(i).getCell(j).getBooleanCellValue());
+                            break;
+                    }
+
                     excelData.append(sh.getRow(i).getCell(j));
                     if (j < cols.length - 1)
                         excelData.append("\",\n ");

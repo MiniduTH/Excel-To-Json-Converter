@@ -1,6 +1,31 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="ExcelToJsonConverter:jar">
-    <output-path>$USER_HOME$/Desktop</output-path>
-    <root id="archive" name="ExcelToJsonConverter.jar" />
+    <output-path>$PROJECT_DIR$/out/artifacts/ExcelToJsonConverter_jar</output-path>
+    <root id="archive" name="ExcelToJsonConverter.jar">
+      <element id="module-output" name="ExcelToJsonConverter" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout-swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout-core.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/poi-5.2.3 (1).jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/curvesapi-1.07.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/xmlbeans-5.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/poi-ooxml-5.2.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/log4j-api-2.20.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-io-2.18.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/log4j-core-2.20.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/poi-5.4.0-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/poi-ooxml-full-5.2.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-compress-1.21.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout-core-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout-core-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-io-2.18.0-tests.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout-swing-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/miglayout-swing-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/poi-ooxml-5.2.3-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/poi-ooxml-5.2.3-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-collections4-4.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-io-2.18.0-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-io-2.18.0-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-io-2.18.0-test-sources.jar" path-in-jar="/" />
+    </root>
   </artifact>
 </component>
