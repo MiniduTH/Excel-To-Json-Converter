@@ -85,6 +85,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-LinkediIn - [Your LinkedIn](https://linkedin.com/in/minidu0th)
+LinkediIn - [Minidu Weerasinghe](https://linkedin.com/in/minidu0th)
 
 Project Link: [https://github.com/MiniduTH/Excel-To-Json-Converter](https://github.com/MiniduTH/Excel-To-Json-Converter)
