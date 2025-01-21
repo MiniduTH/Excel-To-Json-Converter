@@ -1,11 +1,9 @@
 package excelConvertor;
 
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.*;
 
 import java.io.FileInputStream;
+import java.util.Objects;
 
 public class ReadExcel {
 
@@ -32,23 +30,21 @@ public class ReadExcel {
                     excelData.append(sh.getRow(0).getCell(j));
                     excelData.append("\" : ");
                     CellType ct =sh.getRow(i).getCell(j).getCellType();
-                    switch (ct){
-                        case NUMERIC:
-                            excelData.append(sh.getRow(i).getCell(j).getNumericCellValue());
-                            break;
-                        case STRING:
-                            excelData.append("\"").append(sh.getRow(i).getCell(j).getStringCellValue()).append("\"");
-                            break;
-                        case BOOLEAN:
-                            excelData.append(sh.getRow(i).getCell(j).getBooleanCellValue());
-                            break;
+                    if ((Objects.requireNonNull(ct) != CellType.NUMERIC) || DateUtil.isCellDateFormatted(sh.getRow(i).getCell(j))) {
+                        excelData.append("\"");
                     }
 
                     excelData.append(sh.getRow(i).getCell(j));
+
+                    if ((Objects.requireNonNull(ct) != CellType.NUMERIC) || DateUtil.isCellDateFormatted(sh.getRow(i).getCell(j))) {
+                        excelData.append("\"");
+                    }
+
                     if (j < cols.length - 1)
-                        excelData.append("\",\n ");
+                        excelData.append(",\n ");
                     else
-                        excelData.append("\"\n");
+                        excelData.append("\n");
+
                 }
 
                 if (i < rows)
