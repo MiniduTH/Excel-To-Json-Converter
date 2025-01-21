@@ -4,7 +4,6 @@ import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
 
 public class MainApp extends JFrame {
     private static final Color PRIMARY_COLOR = new Color(51, 153, 255);
@@ -41,19 +40,19 @@ public class MainApp extends JFrame {
 
         // Initialize components with improved styling
         JTextField filePathField = createStyledTextField();
-        JTextField sheetNameField = createPlaceholderTextField("Sheet1 (default)");
+        JTextField sheetNameField = createPlaceholderTextField();
         JTextField columnsField = createStyledTextField();
         JTextField outputLocationField = createStyledTextField();
 
         JButton browseFileButton = createStyledButton("Browse");
         JButton browseOutputButton = createStyledButton("Browse");
-        JButton convertButton = createPrimaryButton("Convert to JSON");
+        JButton convertButton = createPrimaryButton();
 
         // Add components to form panel
         addFormRow(formPanel, gbc, 0, "Excel File:", filePathField, browseFileButton);
         addFormRow(formPanel, gbc, 1, "Sheet Name:", sheetNameField, null);
         addFormRow(formPanel, gbc, 2, "Columns:", columnsField,
-                createInfoLabel("Enter comma-separated column numbers"));
+                createInfoLabel());
         addFormRow(formPanel, gbc, 3, "Output Location:", outputLocationField, browseOutputButton);
 
         // Add convert button with special styling
@@ -101,15 +100,15 @@ public class MainApp extends JFrame {
         return field;
     }
 
-    private JTextField createPlaceholderTextField(String placeholder) {
+    private JTextField createPlaceholderTextField() {
         JTextField field = createStyledTextField();
         field.setForeground(Color.GRAY);
-        field.setText(placeholder);
+        field.setText("Sheet1 (default)");
 
         field.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
-                if (field.getText().equals(placeholder)) {
+                if (field.getText().equals("Sheet1 (default)")) {
                     field.setText("");
                     field.setForeground(Color.BLACK);
                 }
@@ -118,7 +117,7 @@ public class MainApp extends JFrame {
             @Override
             public void focusLost(FocusEvent e) {
                 if (field.getText().isEmpty()) {
-                    field.setText(placeholder);
+                    field.setText("Sheet1 (default)");
                     field.setForeground(Color.GRAY);
                 }
             }
@@ -135,8 +134,8 @@ public class MainApp extends JFrame {
         return button;
     }
 
-    private JButton createPrimaryButton(String text) {
-        JButton button = createStyledButton(text);
+    private JButton createPrimaryButton() {
+        JButton button = createStyledButton("Convert to JSON");
         button.setBackground(PRIMARY_COLOR);
         button.setForeground(Color.black);
         button.setFont(new Font("Segoe UI", Font.BOLD, 16));
@@ -157,9 +156,9 @@ public class MainApp extends JFrame {
         return button;
     }
 
-    private JLabel createInfoLabel(String text) {
-        JLabel label = new JLabel(text);
-        label.setFont(new Font("Segoe UI", Font.ITALIC, 12));
+    private JLabel createInfoLabel() {
+        JLabel label = new JLabel("Enter comma-separated column numbers");
+        label.setFont(new Font("Segue UI", Font.ITALIC, 12));
         label.setForeground(Color.GRAY);
         return label;
     }
