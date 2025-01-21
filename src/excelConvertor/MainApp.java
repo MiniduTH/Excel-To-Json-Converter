@@ -8,9 +8,9 @@ import java.awt.event.*;
 public class MainApp extends JFrame {
     private static final Color PRIMARY_COLOR = new Color(51, 153, 255);
     private static final Color BACKGROUND_COLOR = new Color(240, 240, 245);
-    private static final Font HEADER_FONT = new Font("Segoe UI", Font.BOLD, 24);
-    private static final Font LABEL_FONT = new Font("Segoe UI", Font.BOLD, 14);
-    private static final Font FIELD_FONT = new Font("Segoe UI", Font.PLAIN, 14);
+    private static final Font HEADER_FONT = new Font("Segue UI", Font.BOLD, 24);
+    private static final Font LABEL_FONT = new Font("Segue UI", Font.BOLD, 14);
+    private static final Font FIELD_FONT = new Font("Segue UI", Font.PLAIN, 14);
 
     public MainApp() {
         setTitle("MTH Excel to JSON Converter");
@@ -138,7 +138,7 @@ public class MainApp extends JFrame {
         JButton button = createStyledButton("Convert to JSON");
         button.setBackground(PRIMARY_COLOR);
         button.setForeground(Color.black);
-        button.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        button.setFont(new Font("Segue UI", Font.BOLD, 16));
         button.setBorder(new EmptyBorder(12, 30, 12, 30));
 
         button.addMouseListener(new MouseAdapter() {
@@ -222,7 +222,7 @@ public class MainApp extends JFrame {
         // Perform conversion in background
         SwingWorker<Void, Void> worker = new SwingWorker<>() {
             @Override
-            protected Void doInBackground() throws Exception {
+            protected Void doInBackground()  {
                 ReadExcel readExcel = new ReadExcel();
                 String data = readExcel.getExcelData(filePath,
                         sheetName.isEmpty() ? "Sheet1" : sheetName, cols);
@@ -237,7 +237,7 @@ public class MainApp extends JFrame {
                 try {
                     get(); // Check for exceptions
                     statusLabel.setText("Conversion completed successfully!");
-                    showSuccess("Success", "Conversion completed successfully!");
+                    showSuccess();
                 } catch (Exception e) {
                     statusLabel.setText("Conversion failed!");
                     showError("Error", "Conversion failed: " + e.getMessage());
@@ -256,8 +256,8 @@ public class MainApp extends JFrame {
                 JOptionPane.ERROR_MESSAGE);
     }
 
-    private void showSuccess(String title, String message) {
-        JOptionPane.showMessageDialog(this, message, title,
+    private void showSuccess() {
+        JOptionPane.showMessageDialog(this, "Conversion completed successfully!", "Success",
                 JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -268,8 +268,6 @@ public class MainApp extends JFrame {
             e.printStackTrace();
         }
 
-        SwingUtilities.invokeLater(() -> {
-            new MainApp().setVisible(true);
-        });
+        SwingUtilities.invokeLater(() -> new MainApp().setVisible(true));
     }
 }
