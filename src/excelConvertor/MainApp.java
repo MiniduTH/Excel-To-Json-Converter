@@ -225,7 +225,7 @@ public class MainApp extends JFrame {
             protected Void doInBackground()  {
                 ReadExcel readExcel = new ReadExcel();
                 String data = readExcel.getExcelData(filePath,
-                        sheetName.isEmpty() ? "Sheet1" : sheetName, cols);
+                        sheetName.isEmpty() ? null : sheetName, cols);
 
                 WriteJson writer = new WriteJson(data, outputLocation);
                 writer.fileWrite();
